@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    color: #C4C4CC;
+    font-family: "Roboto", sans-serif;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 4rem 0 4rem 7.2rem;
+    width: 100%;
+}
+
+.logo {
+    margin-right: 4.3rem;
+}
+
+.header ul {
+    display: flex;
+    gap: 5.3rem;
+    list-style-type: none;
+}
+
+.header a {
+    color: #C4C4CC;
+    display: inline-block;
+    font-family: "Roboto", sans-serif;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    text-decoration: none;
+}
+
+.header a:hover {
+    transform: scale(1.05);
+}
