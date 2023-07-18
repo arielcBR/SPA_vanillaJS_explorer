@@ -1,4 +1,4 @@
-class Router {
+export class Router {
     routes = {}
 
     add(routeName, page) {
@@ -6,9 +6,7 @@ class Router {
     }
 
     route(event) {
-        event = event || window.event
         event.preventDefault()
-
         window.history.pushState({}, "", event.target.href)
         this.handle()
     }
@@ -20,11 +18,19 @@ class Router {
         fetch(route)
             .then(data => data.text())
             .then(html => {
+                const styleSheet = document.querySelector("#css")
+
+                if (pathname == "/explorer") {
+                    styleSheet.href = "./css/explorer.css"
+                }
+                else if (pathname == "/universe") {
+                    styleSheet.href = "./css/universe.css"
+                }
+                else {
+                    styleSheet.href = "./css/home.css"
+                }
+
                 document.querySelector('#app').innerHTML = html
             })
-
     }
-
 }
-
-export default new Router()
